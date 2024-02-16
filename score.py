@@ -338,7 +338,7 @@ handList = [1, 1, 1, 1, 2, 2, 2, 2]
 ################
 
 # Sample .txt file
-text_file = 'textfile.txt'
+text_file = 'books.txt'
 
 # True to print stuff in the console, false to quiet mode
 debugMode = False
@@ -485,7 +485,7 @@ def objectiveFunction(file, myGenome, currentLayoutMap, QWERTYscore):
     oldFinger = 0
     oldHand = 0
 
-    for i in range(1, myGenome+1):
+    for i in range(1, len(myGenome)+1):
         x, y, _, finger, home = currentLayoutMap[i]
 
         # Place finger on their home key
@@ -517,7 +517,7 @@ def baselineObjectiveFunction(file, myGenome, currentLayoutMap):
     oldFinger = 0
     oldHand = 0
     
-    for i in range(1, myGenome+1):
+    for i in range(1, len(myGenome)+1):
         x, y, _, finger, home = currentLayoutMap[i]
 
         if home == 1:
@@ -583,7 +583,7 @@ def appendUpdates(updateLine):
 def drawKeyboard(myGenome, id, currentLayoutMap):
     plt.figure()
 
-    for i in range(1, myGenome+1):
+    for i in range(1, len(myGenome)+1):
         letter = myGenome[i - 1]
         x, y, row, finger, home = currentLayoutMap[i]
 
@@ -743,7 +743,7 @@ def runSA(layoutMap, baselineLayout, temperature, epoch, coolingRate, num_iterat
         plt.ylabel('Objective Score [%]')
         plt.title('Objective Scores vs Iteration')
         plt.legend()
-        plt.savefig(f'outputs/score/plot-layouts/objective.png')
+        plt.savefig(f'outputs/score/plot-layouts/objective.png', dpi=300)
         plt.show()
 
         plt.close()
@@ -835,7 +835,7 @@ def paretoEfficiency(original, ideal, verbose):
     plt.gca().invert_yaxis()
     plt.ylabel('Objective Score [%]')
     plt.title('Pareto frontier')
-    plt.savefig(f'outputs/score/plot-layouts/pareto.png')
+    plt.savefig(f'outputs/score/plot-layouts/pareto.png', dpi=300)
     plt.show()
     
     plt.close()
@@ -854,7 +854,7 @@ bestGenome, QWERTYscore = runSA(layoutMap=traditionalLayoutMap,     # define lay
                                 temperature=500,                    # starting T, at T=1 the cycle stops
                                 epoch=20,                           # number of times that the algorithm will work through the same dataset
                                 coolingRate=0.99,                   # decrease of temperature (0.99)
-                                num_iterations=12000,               # max number of iteration (25000)
+                                num_iterations=20000,               # max number of iteration (25000)
                                 plot_current_best=True,             # set False to not plot layouts
                                 verbose=True)                       # set False to silence terminal outputs)
 print('bestGenome: ',bestGenome)

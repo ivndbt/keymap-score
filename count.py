@@ -45,12 +45,13 @@ def plotNgramDistribution(ngramDict, n, top_n):
     labels, values = zip(*ngramSortedHead)
 
     # Create a horizontal histogram
-    plt.barh(labels, values, height=0.8, left=None, align='center', linewidth=0, color="b")
+    plt.barh(labels, values, height=0.8, left=None, align='center', linewidth=0, color="y")
     plt.gca().invert_yaxis()
     plt.ylabel(f"{n}-gram")
+    plt.yticks(fontsize=6)
     plt.xlabel("Frequency")
     plt.title(f"Distribution of {n}-gram")
-    plt.savefig(f"outputs/plot_{n}gram.png")
+    plt.savefig(f"outputs/plot_{n}gram.png", dpi=300)
     plt.show()
 
 def writeNgramCountToFile(ngramCount, n):
