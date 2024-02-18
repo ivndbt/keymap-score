@@ -28,7 +28,7 @@ Run `count.py` to analyze input data and generate logs and histograms. This is u
 
 Output for the Italian language over 4 books of data:
 
-[![Example Graph](path/to/example/graph.png)](path/to/example/graph.png)
+[![Example graph of monogram distribution](assets/plot_1gram.png)](assets/plot_1gram.png)
 
 ### Keymap Optimization
 
@@ -36,7 +36,7 @@ Execute `score.py` to perform keymap optimization using simulated annealing. Cus
 
 Below is an example graph showing the improvement achieved with simulated annealing:
 
-[![Example Graph](path/to/example/graph.png)](path/to/example/graph.png)
+[![Example graph of simulated annealing](assets/objective.png)](assets/objective.png)
 
 ### Pareto Efficiency Analysis
 
@@ -44,7 +44,11 @@ After optimization, answer "yes" to run the Pareto efficiency analysis to identi
 
 And this one is the Pareto frontier. Just the first handful of key swaps give the most improvement.
 
-[![Example Graph](path/to/example/graph.png)](path/to/example/graph.png)
+[![Example graph of the Pareto frontier](assets/pareto.png)](assets/pareto.png)
+
+Here the layout after 6 swaps.
+
+[![Example output layout](assets/pareto_6.png)](assets/pareto_6.png)
 
 ## Setup
 
@@ -66,6 +70,37 @@ And this one is the Pareto frontier. Just the first handful of key swaps give th
 5. **Output**: Review logs and layout plots in the designated output directories.
 
 6. **Re-Run**: If you want to run the script again, remember to empty or change the `plot-layouts` directory. Otherwise, you will get a mix of outputs.
+
+### Windows
+
+If you wish to run this program on Windows, follow these quick steps:
+
+1. If you already have a Python IDE, proceed to step 5. If not, I recommend installing VS Code. During installation, ensure to install it in the suggested directory `%APPDATA%` and select the "add to PATH" option. Also, install the Python Interpreter and choose the "add to PATH" option for it as well.
+
+2. Open VS Code and install the Python extension.
+
+3. Navigate to the `keymap-score` folder.
+
+4. Open the terminal (View > Terminal) and switch the profile from PowerShell to Command Prompt (locate the option near the "+" icon in the top right corner of the Terminal tab).
+
+5. Set up the Python virtual environment:
+
+    ```cmd
+    python -m venv .venv
+    .venv\Scripts\activate
+    pip install -r requirements.txt
+    ```
+
+6. Open the command palette (View > Command Palette...), search for "Select Python Interpreter," and choose the one from the `.venv` environment.
+
+7. Modify all the file paths in the `count.py` and `score.py` files as follows:
+
+    ```
+    dir/subdir-1/subdir-2       # suitable for Linux
+    dir\\subdir-1\\subdir-2     # suitable for Windows
+    ```
+
+These steps will ensure smooth execution of the program on your Windows system.
 
 ## Customization
 
