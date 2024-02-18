@@ -2,6 +2,8 @@
 
 **Keymap Score** is a tool for analyzing and finding the optimal keymap for your language. It's heavily based on the work by [Atomic Frontier](https://github.com/AtomicFrontierCode/keyboards), but with some enhancements.
 
+You can find more about this project on [rookiebwoy.eu](https://www.rookiebwoy.eu/projects/keymap-score/keymap-score.php).
+
 ## Features
 
 - **ISO Layout Support**: Adapted to work with ISO layouts.
