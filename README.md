@@ -2,7 +2,7 @@
 
 **Keymap Score** is a tool for analyzing and finding the optimal keymap for your language. It's heavily based on the work by [Atomic Frontier](https://github.com/AtomicFrontierCode/keyboards), but with some enhancements.
 
-You can find more about this project on [rookiebwoy.eu](https://www.rookiebwoy.eu/projects/keymap-score/keymap-score.php).
+You can find more about this project on ~~[rookiebwoy.eu](https://www.rookiebwoy.eu/projects/keymap-score/keymap-score.php)~~ [ivndbt.com](https://ivndbt.com/makes/keymap-score/keymap-score.html).
 
 ## Features
 
